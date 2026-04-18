@@ -1,4 +1,33 @@
+const useScramble = (text, delay = 0, speed = 50) => {
+  const [out, setOut] = React.useState("");
+  React.useEffect(() => {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let i = 0;
+    let raf;
+    const t = setTimeout(() => {
+      const tick = () => {
+        const target = text;
+        const revealed = target.slice(0, Math.floor(i));
+        const scrambled = target.slice(Math.floor(i)).split("").map(c => {
+          if (c === " " || c === "." || c === ",") return c;
+          return chars[Math.floor(Math.random() * chars.length)];
+        }).join("");
+        setOut(revealed + scrambled);
+        i += 0.8;
+        if (i < target.length + 1) raf = requestAnimationFrame(tick);
+        else setOut(target);
+      };
+      tick();
+    }, delay);
+    return () => { clearTimeout(t); cancelAnimationFrame(raf); };
+  }, [text, delay, speed]);
+  return out || "\u00A0".repeat(text.length);
+};
+
 const Hero = () => {
+  const name = useScramble("Rafael Cirolini.", 200);
+  const year = new Date().getFullYear();
+
   return (
     <section className="hero" id="top">
       <div className="hero-inner">
@@ -8,16 +37,16 @@ const Hero = () => {
         </div>
 
         <h1 className="hero-title">
-          <span className="reveal-line"><span style={{animationDelay: '0.2s'}}>Rafael Cirolini.</span></span>
-          <span className="reveal-line"><span style={{animationDelay: '0.35s'}}>
+          <span className="reveal-line"><span style={{animationDelay: '0.2s'}}>{name}</span></span>
+          <span className="reveal-line"><span style={{animationDelay: '0.55s'}}>
             Engineering leader working at the
           </span></span>
-          <span className="reveal-line"><span style={{animationDelay: '0.5s'}}>
+          <span className="reveal-line"><span style={{animationDelay: '0.7s'}}>
             intersection of <em>product</em> and <em>applied AI</em>.
           </span></span>
         </h1>
 
-        <div className="hero-foot reveal" style={{animationDelay: '0.8s'}}>
+        <div className="hero-foot reveal" style={{animationDelay: '1.0s'}}>
           <div className="hero-bio">
             <p>
               Sr. Manager of Product Development at ADP Labs Brazil. Master's student
@@ -34,7 +63,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero-scroll reveal" style={{animationDelay: '1.1s'}}>
+      <div className="hero-scroll reveal" style={{animationDelay: '1.4s'}}>
         <span className="mono">scroll</span>
         <span className="scroll-line" />
       </div>

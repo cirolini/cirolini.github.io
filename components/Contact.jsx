@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <section className="section contact-section" id="contact">
       <div className="section-grid">
-        <div className="section-label"><span className="mono">08 / Contact</span></div>
+        <div className="section-label"><span className="section-num">0<em>8</em></span><span className="section-sub">Contact</span></div>
         <div className="section-body">
           <h2 className="contact-head">
             Let's talk about <em>engineering</em>, <em>AI</em>, or <em>research</em>.

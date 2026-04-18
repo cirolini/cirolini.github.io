@@ -3,7 +3,8 @@ const About = () => {
     <section className="section" id="about">
       <div className="section-grid">
         <div className="section-label">
-          <span className="mono">01 / About</span>
+          <span className="section-num">0<em>1</em></span>
+          <span className="section-sub">About</span>
         </div>
         <div className="section-body">
           <p className="lede">

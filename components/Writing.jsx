@@ -34,14 +34,9 @@ const TALKS = [
 
 const PUBS = [
   {
-    title: "Reinforcement learning with expiring rewards: a grid-world study",
-    venue: "Applied Computing — research in progress",
-    year: "2025",
-  },
-  {
-    title: "Language model integration patterns for enterprise backends",
-    venue: "Working paper",
-    year: "2024",
+    title: "A lightweight intent classifier based on semantic vectors",
+    venue: "Master's thesis — Applied Computing, in progress",
+    year: "2026",
   },
 ];
 
@@ -50,7 +45,7 @@ const Writing = () => {
     <>
       <section className="section" id="writing">
         <div className="section-grid">
-          <div className="section-label"><span className="mono">05 / Writing</span></div>
+          <div className="section-label"><span className="section-num">0<em>5</em></span><span className="section-sub">Writing</span></div>
           <div className="section-body">
             <p className="lede">
               Short essays and notes — mostly on engineering practice and applied AI.
@@ -70,7 +65,7 @@ const Writing = () => {
 
       <section className="section" id="talks">
         <div className="section-grid">
-          <div className="section-label"><span className="mono">06 / Talks</span></div>
+          <div className="section-label"><span className="section-num">0<em>6</em></span><span className="section-sub">Talks</span></div>
           <div className="section-body">
             <p className="lede">Lectures, community talks and course material.</p>
           </div>
@@ -90,9 +85,9 @@ const Writing = () => {
 
       <section className="section" id="publications">
         <div className="section-grid">
-          <div className="section-label"><span className="mono">07 / Publications</span></div>
+          <div className="section-label"><span className="section-num">0<em>7</em></span><span className="section-sub">Publications</span></div>
           <div className="section-body">
-            <p className="lede">Ongoing academic work — Applied Computing, AI focus.</p>
+            <p className="lede">Current master's research — low-latency intent detection without full LLMs.</p>
           </div>
         </div>
         <ul className="simple-list">
