@@ -25,6 +25,21 @@ const ROLES = [
   },
 ];
 
+const EDUCATION = [
+  {
+    period: "2024 — Present",
+    role: "M.Sc. in Applied Computing",
+    org: "Focus: Artificial Intelligence",
+    note: "Thesis in progress — a lightweight intent classifier based on semantic vectors.",
+  },
+  {
+    period: "2017 — 2019",
+    role: "Graduate Specialization — Big Data & Data Science",
+    org: "UFRGS · Universidade Federal do Rio Grande do Sul",
+    note: "Large-scale data management, analytical processing, visualization, and cloud computing — both theory and hands-on tooling.",
+  },
+];
+
 const Experience = () => {
   return (
     <section className="section" id="experience">
@@ -43,6 +58,32 @@ const Experience = () => {
 
       <ol className="timeline">
         {ROLES.map((r, i) => (
+          <li key={i} className="timeline-item">
+            <div className="timeline-period mono">{r.period}</div>
+            <div className="timeline-body">
+              <div className="timeline-role">{r.role}</div>
+              <div className="timeline-org">{r.org}</div>
+              <p className="timeline-note">{r.note}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="section-grid" style={{marginTop: 80}}>
+        <div className="section-label">
+          <span className="section-num">0<em>4</em></span>
+          <span className="section-sub">Education</span>
+        </div>
+        <div className="section-body">
+          <p className="lede">
+            Graduate work in data and AI — currently completing a master's on
+            intent detection.
+          </p>
+        </div>
+      </div>
+
+      <ol className="timeline">
+        {EDUCATION.map((r, i) => (
           <li key={i} className="timeline-item">
             <div className="timeline-period mono">{r.period}</div>
             <div className="timeline-body">

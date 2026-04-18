@@ -22,7 +22,7 @@ const Skills = () => {
     <section className="section" id="skills">
       <div className="section-grid">
         <div className="section-label">
-          <span className="section-num">0<em>4</em></span>
+          <span className="section-num">0<em>5</em></span>
           <span className="section-sub">Practice</span>
         </div>
         <div className="section-body">
